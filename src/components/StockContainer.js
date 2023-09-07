@@ -1,11 +1,18 @@
 import React from "react";
 import Stock from "./Stock";
 
-function StockContainer() {
+function StockContainer( { stocks, editPortfolio, filterBy } ) {
+
+  const list = stocks.filter((object) => object.type === filterBy || filterBy === "");
+
   return (
     <div>
       <h2>Stocks</h2>
-      {/* render stock list here*/}
+      {list.map( stock => (
+        <Stock key={stock.id}
+        stock={stock}
+        editPortfolio={editPortfolio} />
+      ))}
     </div>
   );
 }
