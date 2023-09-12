@@ -11,7 +11,7 @@ function StockContainer( { stocks, editPortfolio, filterBy } ) {
       {list.map( stock => (
         <Stock key={stock.id}
         stock={stock}
-        editPortfolio={editPortfolio} />
+        editPortfolio={editPortfolio}/>
       ))}
     </div>
   );
